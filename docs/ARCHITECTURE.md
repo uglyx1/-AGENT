@@ -1,38 +1,37 @@
-# Architecture
+# 系统架构
 
-## High-Level Flow
+## 总体流程
 
-1. User sends natural language request to `/chat`.
-2. Intent router decides which tool chain to trigger.
-3. If SKU is missing, retrieval module resolves candidate SKUs.
-4. Selected tool executes (query / compare / draft operation).
-5. Agent returns:
-   - answer summary
-   - tool call trace
-   - structured payload for UI rendering
+1. 用户通过自然语言请求进入 `/chat`。
+2. 意图路由层判断当前问题所属场景。
+3. 若缺少 SKU，先由检索层进行候选召回。
+4. 调用对应工具链执行查询、对比或流程草稿生成。
+5. 返回统一结构化结果：
+   - 答案文本
+   - 工具调用轨迹
+   - 前端可渲染数据
 
-## Agent Layers
+## 分层设计
 
-- API Layer
-  - health, chat, compare-report, download endpoints
-- Orchestration Layer
-  - intent parsing
-  - tool selection
-  - fallback routing
-- Tool Layer
-  - inventory query tool
-  - market query tool
-  - profit compare/report tool
-  - listing/repricing draft tool (dry-run only)
-- Retrieval Layer
-  - exact match first
-  - embedding retrieval via vector DB
-  - rerank on top candidates
-  - TF-IDF fallback for resilience
+- API 层
+  - 对外接口：health、chat、compare-report、download
+- 编排层
+  - 意图识别
+  - 工具选择
+  - 回退策略控制
+- 工具层
+  - 库存查询工具
+  - 市场查询工具
+  - 利润对比与报表工具
+  - 上架/改价草稿工具（仅 Dry-Run）
+- 检索层
+  - 精确匹配优先
+  - Embedding + 向量库召回
+  - Rerank 精排
+  - TF-IDF 回退保障
 
-## Reliability Strategy
+## 稳定性策略
 
-- deterministic fallback when external retrieval services are unavailable
-- dry-run safety mode for high-risk operations
-- structured response contract for debuggability and trust
-
+- 外部依赖不可用时自动回退，保证服务连续性
+- 高风险操作默认 Dry-Run，避免误写入
+- 统一响应契约，便于调试、审计与业务侧接入

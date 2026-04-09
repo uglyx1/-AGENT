@@ -1,34 +1,33 @@
-# Feature Modules
+# 功能模块
 
-## 1. Conversational Query Agent
+## 1. 对话式查询 Agent
 
-- accepts natural language requests
-- supports inventory and market lookup scenarios
-- can resolve incomplete product references using retrieval
+- 支持自然语言输入
+- 支持库存查询与市场查询场景
+- 当商品信息不完整时，可通过检索补全候选结果
 
-## 2. Heavy RAG Retrieval
+## 2. 重型 RAG 检索
 
-- embedding-based semantic retrieval for noisy/unstructured input
-- vector database candidate recall
-- rerank stage for precision optimization
-- TF-IDF fallback for low-dependency continuity
+- 基于 Embedding 的语义检索，适配口语化与非标准表达
+- 向量数据库召回候选
+- Rerank 精排提升命中准确度
+- 具备 TF-IDF 回退机制，保证低依赖可用性
 
-## 3. Two-Platform Profit Comparison
+## 3. 双平台利润对比
 
-- compares current-platform price baseline against second-platform feed
-- filters by profit threshold (example: profit > 100 / 200)
-- returns both preview table and downloadable report metadata
+- 以当前平台价格为基准，对比第二平台价格数据
+- 支持利润阈值筛选（例如：利润 > 100 / 200）
+- 返回表格预览与可下载报表元数据
 
-## 4. Report Export and Download
+## 4. 报表导出与下载
 
-- structured result rows
-- CSV export pipeline
-- direct download endpoint contract for UI consumption
+- 结构化结果行输出
+- CSV 导出链路
+- 下载接口可直接供前端或业务面板接入
 
-## 5. Operation Draft Mode (Safety First)
+## 5. 运营动作草稿模式（安全优先）
 
-- conversational listing/repricing planning
-- parameter completeness checks
-- explicit dry-run response (`executed=false`)
-- no real write operation in public demo scope
-
+- 支持对话式上架/改价流程草稿生成
+- 支持参数完整性校验
+- 明确返回 Dry-Run 标记（`executed=false`）
+- 公开演示范围内不执行真实写操作

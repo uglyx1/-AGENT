@@ -1,24 +1,23 @@
-# Security and Publish Scope
+# 安全与公开范围
 
-## Public Scope
+## 公开范围
 
-This public edition exposes only:
+当前公开版仅包含：
 
-- architecture-level design
-- product capabilities
-- API contracts and demo request/response structures
+- 架构设计说明
+- 功能能力描述
+- API 契约与演示级请求/返回结构
 
-## Excluded from Public Release
+## 不公开内容
 
-- core source files
-- private scraping and automation implementations
-- business-specific pricing and operation logic
-- internal credentials and production mappings
-- raw private datasets
+- 核心业务源码
+- 私有抓取与自动化实现
+- 业务定价与运营策略细节
+- 内部凭据、映射关系与生产配置
+- 原始私有数据集
 
-## Why This Split
+## 这样拆分的原因
 
-- protects commercial IP and operational know-how
-- enables portfolio showcase without disclosing private implementation
-- keeps collaboration discussions focused on architecture and engineering approach
-
+- 保护商业知识产权与运营方法
+- 支持项目展示与客户沟通，同时避免泄露实现细节
+- 保持外部协作聚焦在工程方法与架构能力，而非敏感数据

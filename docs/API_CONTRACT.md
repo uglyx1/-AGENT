@@ -1,19 +1,19 @@
-# API Contract (Public Demo)
+# API 契约（公开演示版）
 
 ## `POST /chat`
 
-Unified conversational entrypoint.
+统一的对话入口。
 
-### Request
+### 请求示例
 
 ```json
 {
-  "message": "Give me products with profit greater than 100 after two-platform comparison",
+  "message": "给我一份两平台对比后利润大于100的商品",
   "session_id": "demo-1"
 }
 ```
 
-### Response Shape
+### 返回结构
 
 ```json
 {
@@ -27,9 +27,9 @@ Unified conversational entrypoint.
 
 ## `POST /compare/profit/report`
 
-Generate structured two-platform profit report.
+生成双平台利润对比报表（结构化结果）。
 
-### Request
+### 请求示例
 
 ```json
 {
@@ -39,22 +39,21 @@ Generate structured two-platform profit report.
 }
 ```
 
-### Response Fields
+### 核心返回字段
 
-- `rows`: report data rows
-- `table_preview_markdown`: quick preview table
-- `report.download_url`: downloadable file path
-- `stats`: compare stats and source metadata
+- `rows`：利润对比结果行
+- `table_preview_markdown`：快速表格预览
+- `report.download_url`：下载路径
+- `stats`：对比统计与数据源元信息
 
 ## `GET /reports/download/{filename}`
 
-Download generated report file (CSV contract in demo).
+下载已生成报表文件（演示版为 CSV）。
 
 ## `GET /health`
 
-Health and runtime metadata:
+健康检查与运行态元数据，包括：
 
-- module loaded states
-- retrieval backend mode
-- retrieval fallback status
-
+- 模块加载状态
+- 检索后端模式
+- 回退状态
