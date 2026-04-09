@@ -1,0 +1,21 @@
+# Keep this repo documentation-only by default
+*.py
+*.js
+*.ts
+*.tsx
+*.go
+*.java
+*.cs
+*.cpp
+*.c
+
+# Private data
+*.json
+*.csv
+*.xlsx
+
+# Runtime artifacts
+__pycache__/
+.env
+.env.*
+
