@@ -40,6 +40,8 @@ This project is a conversational operations assistant for e-commerce workflows, 
 - `docs/API_CONTRACT.md`: public API contract and demo examples
 - `docs/SECURITY_AND_SCOPE.md`: confidentiality boundary and publish scope
 - `docs/RESUME_DESCRIPTION.md`: ready-to-use resume/project description text
+- `PUBLISH_STEPS.md`: publish steps (English)
+- `PUBLISH_STEPS_CN.md`: publish steps (Chinese)
 
 ## Notes
 
