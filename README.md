@@ -37,14 +37,6 @@
 
 
 
-## 文档目录
-
-- `docs/ARCHITECTURE.md`：系统架构与分层设计
-- `docs/MULTI_AGENT_WORKFLOW.md`：多 Agent 工作流与执行链路
-- `docs/API_CONTRACT.md`：接口契约与返回结构
-- `docs/SECURITY_AND_SCOPE.md`：公开范围与安全说明
-
-
 ## 说明
 
 当前仓库仅作部分功能展示。  
